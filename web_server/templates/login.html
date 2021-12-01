@@ -42,14 +42,14 @@
         </div>
 
         <small class="text-muted ml-2">
-            <a href="{{url_for('reset_request')}}">脑子有问题，找回密码</a>
+            <a href="{{url_for('users.reset_request')}}">脑子有问题，找回密码</a>
         </small>
     </form>
 </div>
 
 <div class="border-top pt-3">
     <small class="text-muted">
-        局外人<a class="ml-2" href="{{ url_for('register') }}">点击注册</a>
+        局外人<a class="ml-2" href="{{ url_for('users.register') }}">点击注册</a>
     </small>
 </div>
 {% endblock content%}

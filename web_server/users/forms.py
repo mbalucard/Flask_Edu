@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from web_server.models import User
 
@@ -65,13 +65,6 @@ class LoginForm(FlaskForm):
     password = PasswordField("密码", validators=[DataRequired("小样，没有钥匙可是进不去的哦！")])
     remember = BooleanField("记住密码")
     submit = SubmitField("点击登陆")
-
-
-# 发贴
-class PostFrom(FlaskForm):
-    title = StringField("文章标题", validators=[DataRequired(message="看来你不是标题党")])
-    content = TextAreaField("文章内容", validators=[DataRequired(message="空者西天也")])
-    submit = SubmitField("点击提交")
 
 
 # 验证邮箱以便重置密码
